@@ -1,0 +1,2 @@
+PS6_1	d_Bacteria;p_Myxococcota;c_Myxococcia;o_Unclassified_Myxococcia;f_Unclassified_Family;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	80.0	45	9	0	150	16	107	151	1.00e-21	77.0
+PS6_2	d_Bacteria;p_Myxococcota;c_Myxococcia;o_Unclassified_Myxococcia;f_Unclassified_Family;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	80.0	45	9	0	150	16	107	151	1.00e-21	77.0

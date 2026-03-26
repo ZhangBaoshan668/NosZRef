@@ -1,0 +1,7 @@
+SampleID	Group
+PA1	LS
+PS4	LS
+PS5	LS
+PS6	MS
+PS7	MS
+PS9	MS

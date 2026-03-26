@@ -1,0 +1,67 @@
+======================================================================
+nosZ Gene Analysis Summary Report
+======================================================================
+
+Analysis time: Thu Mar 26 11:58:48 AM CST 2026
+Input directory: /project/wujp/zbs/wyy_0308
+Output directory: /project/wujp/zbs/wyy_0308
+Number of samples: 6
+Sample list: PA1, PS4, PS5, PS6, PS7, PS9
+
+nosZ Gene Branch Analysis Parameters:
+--------------------------------------------------
+
+nosZI:
+  - Similarity threshold: 64%
+  - Query coverage: 75%
+  - E-value threshold: 1e-05
+  - Clustering threshold: 0.86
+  - Database: nosZI.dmnd
+
+  Sample statistics:
+    - PA1: 168 sequences
+    - PS4: 582 sequences
+    - PS5: 600 sequences
+    - PS6: 257 sequences
+    - PS7: 793 sequences
+    - PS9: 501 sequences
+
+nosZII:
+  - Similarity threshold: 61%
+  - Query coverage: 75%
+  - E-value threshold: 1e-05
+  - Clustering threshold: 0.85
+  - Database: nosZII.dmnd
+
+  Sample statistics:
+    - PA1: 1037 sequences
+    - PS4: 2279 sequences
+    - PS5: 2056 sequences
+    - PS6: 2122 sequences
+    - PS7: 2048 sequences
+    - PS9: 2026 sequences
+
+nosZIII:
+  - Similarity threshold: 77%
+  - Query coverage: 75%
+  - E-value threshold: 1e-05
+  - Clustering threshold: 0.86
+  - Database: nosZIII.dmnd
+
+  Sample statistics:
+    - PA1: 13 sequences
+    - PS4: 2 sequences
+    - PS5: 4 sequences
+    - PS6: 2 sequences
+    - PS7: 46 sequences
+    - PS9: 2 sequences
+
+======================================================================
+Output File Description:
+--------------------------------------------------
+1. Results for each sample: /project/wujp/zbs/wyy_0308/[sample_name]/
+2. Merged results: /project/wujp/zbs/wyy_0308/merge/nosZIII/
+3. Diversity analysis: /project/wujp/zbs/wyy_0308/merge/nosZIII/alpha/, beta/
+4. Species classification: /project/wujp/zbs/wyy_0308/merge/nosZIII/taxonomy/
+5. Visualization charts: PDF files in each analysis directory
+======================================================================

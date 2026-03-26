@@ -1,0 +1,2 @@
+SampleID	RPKM
+PS4	743.948813

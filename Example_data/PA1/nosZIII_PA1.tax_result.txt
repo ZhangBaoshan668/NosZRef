@@ -1,0 +1,13 @@
+PA1_1	145	d_Bacteria;p_Proteobacteria;c_Deltaproteobacteria;o_Unclassified_Deltaproteobacteria;f_Unclassified_Family;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	0	314	82.051	39	7	0	138	22	163	201	2.43e-19	70.5	N/A	N/A
+PA1_2	150	d_Bacteria;p_Proteobacteria;c_Betaproteobacteria;o_Nitrosomonadales;f_Unclassified_Nitrosomonadales;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	0	314	100.000	39	0	0	146	30	276	314	2.39e-25	86.7	N/A	N/A
+PA1_3	150	d_Bacteria;p_Pseudomonadota;c_Betaproteobacteria;o_Nitrosomonadales;f_Gallionellaceae;g_Gallionella;s_Unclassified_Gallionella_nosZIII	0	314	94.872	39	2	0	1	117	116	154	1.78e-21	76.6	N/A	N/A
+PA1_4	150	d_Bacteria;p_Pseudomonadota;c_Betaproteobacteria;o_Nitrosomonadales;f_Gallionellaceae;g_Gallionella;s_Unclassified_Gallionella_nosZIII	0	314	85.417	48	0	1	6	149	152	192	2.67e-23	81.3	N/A	N/A
+PA1_5	150	d_Bacteria;p_Pseudomonadota;c_Betaproteobacteria;o_Nitrosomonadales;f_Gallionellaceae;g_Gallionella;s_Unclassified_Gallionella_nosZIII	0	314	85.417	48	0	1	6	149	152	192	2.67e-23	81.3	N/A	N/A
+PA1_6	150	d_Bacteria;p_Patescibacteria;c_Parcubacteria;o_Candidatus_Moraniibacteriota;f_Unclassified_Candidatus_Moraniibacteriota;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	0	314	80.000	45	0	2	2	136	233	268	6.69e-18	66.6	N/A	N/A
+PA1_7	118	d_Bacteria;p_Proteobacteria;c_Betaproteobacteria;o_Burkholderiales;f_Unclassified_Burkholderiales;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	0	314	93.333	30	2	0	118	29	124	153	3.48e-16	61.6	N/A	N/A
+PA1_8	150	d_Bacteria;p_Proteobacteria;c_Betaproteobacteria;o_Nitrosomonadales;f_Gallionellaceae;g_Unclassified_Genus;s_Unclassified_Gallionella_nosZIII	0	314	93.878	49	3	0	148	2	96	144	1.18e-28	95.5	N/A	N/A
+PA1_9	149	d_Bacteria;p_Proteobacteria;c_Betaproteobacteria;o_Nitrosomonadales;f_Gallionellaceae;g_Unclassified_Genus;s_Unclassified_Gallionella_nosZIII	0	314	95.918	49	2	0	148	2	99	147	4.38e-30	99.4	N/A	N/A
+PA1_10	150	d_Bacteria;p_Nitrospirota;c_Unclassified_Nitrospirota;o_Unclassified_Order;f_Unclassified_Family;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	0	259	80.851	47	9	0	141	1	46	92	7.43e-24	82.0	N/A	N/A
+PA1_11	150	d_Bacteria;p_Proteobacteria;c_Betaproteobacteria;o_Nitrosomonadales;f_Gallionellaceae;g_Unclassified_Gallionellaceae;s_Unclassified_Species_nosZIII	0	314	85.366	41	2	2	26	148	257	293	6.06e-17	63.9	N/A	N/A
+PA1_12	150	d_Bacteria;p_Pseudomonadota;c_Betaproteobacteria;o_Nitrosomonadales;f_Gallionellaceae;g_Gallionella;s_Unclassified_Gallionella_nosZIII	0	314	85.714	49	0	1	149	3	158	199	1.64e-23	82.0	N/A	N/A
+PA1_13	148	d_Bacteria;p_Proteobacteria;c_Betaproteobacteria;o_Nitrosomonadales;f_Gallionellaceae;g_Unclassified_Gallionellaceae;s_Unclassified_Species_nosZIII	0	314	91.837	49	0	2	1	147	261	305	1.01e-25	87.8	N/A	N/A

@@ -1,0 +1,2 @@
+#OTU ID	PS5	PS7
+OTU_3	2	5

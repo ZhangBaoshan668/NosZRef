@@ -1,0 +1,17 @@
+S	0	150	*	.	*	*	*	OTU_9;size=2;	*
+S	1	149	*	.	*	*	*	OTU_3;size=2;	*
+S	2	150	*	.	*	*	*	OTU_7;size=2;	*
+S	3	150	*	.	*	*	*	OTU_1;size=2;	*
+S	4	150	*	.	*	*	*	OTU_6;size=2;	*
+S	5	150	*	.	*	*	*	OTU_5;size=2;	*
+S	6	150	*	.	*	*	*	OTU_4;size=2;	*
+H	1	150	91.4	+	0	0	11D139M10I	OTU_2;size=2;	OTU_3;size=2;
+S	7	150	*	.	*	*	*	OTU_8;size=2;	*
+C	0	1	*	*	*	*	*	OTU_9;size=2;	*
+C	1	2	*	*	*	*	*	OTU_3;size=2;	*
+C	2	1	*	*	*	*	*	OTU_7;size=2;	*
+C	3	1	*	*	*	*	*	OTU_1;size=2;	*
+C	4	1	*	*	*	*	*	OTU_6;size=2;	*
+C	5	1	*	*	*	*	*	OTU_5;size=2;	*
+C	6	1	*	*	*	*	*	OTU_4;size=2;	*
+C	7	1	*	*	*	*	*	OTU_8;size=2;	*

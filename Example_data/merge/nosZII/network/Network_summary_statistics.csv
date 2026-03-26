@@ -1,0 +1,3 @@
+"Group","Nodes","Edges","Average_degree","Modularity","Transitivity","Diameter","Average_path_length"
+"LS",253,6875,54.3478260869565,0.707453841983471,1,1,1
+"MS",265,6636,50.0830188679245,0.741254072531111,1,1,1

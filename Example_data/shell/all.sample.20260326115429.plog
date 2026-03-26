@@ -1,0 +1,9 @@
+=== START 2026-03-26 11:54:29 START ===
+2026-03-26 11:54:29 Success -> echo "Starting parallel processing of all samples"
+2026-03-26 11:55:30 Success -> sh /project/wujp/zbs/wyy_0308/shell/PA1.sh
+2026-03-26 11:56:10 Success -> sh /project/wujp/zbs/wyy_0308/shell/PS6.sh
+2026-03-26 11:56:14 Success -> sh /project/wujp/zbs/wyy_0308/shell/PS9.sh
+2026-03-26 11:56:18 Success -> sh /project/wujp/zbs/wyy_0308/shell/PS5.sh
+2026-03-26 11:56:26 Success -> sh /project/wujp/zbs/wyy_0308/shell/PS4.sh
+2026-03-26 11:56:28 Success -> sh /project/wujp/zbs/wyy_0308/shell/PS7.sh
+=== END 2026-03-26 11:54:29 END ===

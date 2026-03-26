@@ -1,0 +1,2 @@
+SampleID	RPKM
+PS5	1601.447709

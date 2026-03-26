@@ -1,0 +1,2 @@
+PS9_1	150	d_Bacteria;p_Proteobacteria;c_Deltaproteobacteria;o_Unclassified_Deltaproteobacteria;f_Unclassified_Family;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	0	314	84.615	39	6	0	32	148	163	201	3.25e-20	73.2	N/A	N/A
+PS9_2	149	d_Bacteria;p_Myxococcota;c_Myxococcia;o_Unclassified_Myxococcia;f_Unclassified_Family;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	0	314	82.927	41	7	0	133	11	274	314	2.63e-24	84.0	N/A	N/A

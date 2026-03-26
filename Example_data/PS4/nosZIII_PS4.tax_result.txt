@@ -1,0 +1,2 @@
+PS4_1	150	d_Bacteria;p_Pseudomonadota;c_Betaproteobacteria;o_Betaproteobacteria_incertae_sedis;f_Casimicrobiaceae;g_Unclassified_Casimicrobiaceae;s_Unclassified_Species_nosZIII	0	314	92.105	38	3	0	1	114	116	153	1.91e-20	73.6	N/A	N/A
+PS4_2	105	d_Bacteria;p_Myxococcota;c_Myxococcia;o_Unclassified_Myxococcia;f_Unclassified_Family;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	0	314	90.909	33	3	0	104	6	167	199	3.61e-19	69.3	N/A	N/A

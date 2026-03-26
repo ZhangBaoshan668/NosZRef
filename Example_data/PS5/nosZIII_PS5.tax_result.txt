@@ -1,0 +1,4 @@
+PS5_1	150	d_Bacteria;p_Proteobacteria;c_Gammaproteobacteria;o_Pseudomonadales;f_HTCC2089;g_UBA9659;s_Unclassified_Species_nosZIII	0	314	81.579	38	0	1	114	1	152	182	1.61e-15	60.1	N/A	N/A
+PS5_2	150	d_Bacteria;p_Proteobacteria;c_Deltaproteobacteria;o_Unclassified_Deltaproteobacteria;f_Unclassified_Family;g_Unclassified_Genus;s_Unclassified_Species_nosZIII	0	314	80.952	42	8	0	127	2	88	129	9.57e-20	71.6	N/A	N/A
+PS5_3	147	d_Bacteria;p_Nitrospinota;c_Tectimicrobiota;o_Nitrospinota;f_Nitrospinia;g_Unclassified_Nitrospinia;s_Unclassified_Species_nosZIII	0	314	89.130	46	4	1	139	2	267	311	8.07e-27	90.5	N/A	N/A
+PS5_4	150	d_Bacteria;p_Proteobacteria;c_Gammaproteobacteria;o_Pseudomonadales;f_HTCC2089;g_UBA9659;s_Unclassified_Species_nosZIII	0	314	81.579	38	0	1	114	1	152	182	1.61e-15	60.1	N/A	N/A

@@ -1,0 +1,2 @@
+SampleID	RPKM
+PS9	842.200653
