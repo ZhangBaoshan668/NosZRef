@@ -161,8 +161,6 @@ Files description:
 
 **The `example` folder should contain the `raw_data` folder, `list.txt` and `metadata.txt`. Then, by running the main script file `raw_main.py` in the `example` folder, the analysis can be started.**
 
-![Figure 6](https://raw.githubusercontent.com/ZhangBaoshan668/Figure/main/fig6.jpg)
-
     # Running with default parameters
     
     python3 /your_path/raw_main.py -i ./ -l list.txt -m metadata.txt -o ./
