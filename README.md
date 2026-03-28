@@ -1,4 +1,4 @@
-# NosZRef: an integrated database and pipeline for rapid and accurate profiling of nosZ genes
+# NosZRef: an integrated database and pipeline for rapid and accurate profiling of *nosZ* genes
 Version：v1.0.0
 
 Update：2026/03/28
