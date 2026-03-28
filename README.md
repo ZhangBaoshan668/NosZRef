@@ -11,24 +11,21 @@ To accurately analyze microbially driven nitrous oxide reduction, current databa
 Files description:
 
 - README.md     # Introduction and install
-- blast         # Directory for `BLAST` functional gene index files
 - database      # Directory for `DIAMOND` functional gene index and reference database files
 - software      # Directory for analysis software used in the pipeline
 - sub           # Directory for all Python and R scripts used in the pipeline
-- `nitrogen_rpkm.py`                   # Main script file
-- gene length.txt    # Reference sequence length information of nitrogen cycle functional genes
+- `raw_main.py`                   # Main script file
 - Example_data   # Example dataset
 
 ## What can we do?
 
-- Comprehensive analysis and visualization of N-cycling functional genes, including 71 genes such as *nifH*, *amoA* (bacterial and archaeal), *nirK*/*nirS*, *nosZ*, and *ureC*;
+- Comprehensive analysis and visualization of *nosZ* genes;
 - From raw sequencing data to functional gene abundance tables and microbial community profiles;
-- Accurate identification of N-cycling genes using gene-specific thresholds to minimize false positives;
-- Analysis of a single N-cycling gene completes within five minutes.
+- Accurate identification of *nosZ* genes using gene-specific thresholds to minimize false positives;
 
-![Figure 1](https://raw.githubusercontent.com/ZhangBaoshan668/Figure/main/fig1.jpg)
+![Figure 1](https://raw.githubusercontent.com/ZhangBaoshan668/Figure/main/NosZfig1.jpg)
 
-**Figure 1. OmicsNCyc workflow. (A) Flowchart of major steps for NCycTaxDB construction. (B) Schematic of the data analysis workflow for nitrogen cycling functional genes. (C) Schematic overview of statistical and visual analyses via command-line or online web-platform modes of OmicsNCyc.**
+**Figure 1. NosZRef workflow. (A) Flowchart of major steps for *nosZ* database construction. (B) Schematic of the data analysis workflow for *nosZ* genes. (C) Schematic overview of statistical and visual analyses in NosZRef command-line mode.**
 
 ## Main Features
 + Preprocessing and normalization of nitrogen cycling functional gene sequencing data
