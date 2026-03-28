@@ -40,10 +40,6 @@ Files description:
 
 **Figure 2. Representative publication-ready visualizations.**
 
-## Web application platform
-
-- **https://omicsncyc.shinyapps.io/omicsncyc/**
-
 ## Install
 
 ### Install Conda and R package
@@ -74,9 +70,9 @@ Files description:
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
     conda config --set show_channel_urls yes
 
-    # Create and activate OmicsNCyc environment
-    conda create -n OmicsNCyc
-    conda activate OmicsNCyc
+    # Create and activate NosZRef environment
+    conda create -n NosZRef
+    conda activate NosZRef
 
     # Conda install R
     conda install r-base=4.4.1
@@ -102,41 +98,42 @@ Files description:
     ## Exit R environment
     q()
 
-### Install OmicsNCyc
+### Install NosZRef
 
-    # Create a new directory named “OmicsNCyc” in your home directory. 
-    mkdir OmicsNCyc
-    cd OmicsNCyc
+    # Create a new directory named “NosZRef” in your home directory. 
+    mkdir NosZRef
+    cd NosZRef
 
-    # Downdoald OmicsNCyc pipeline from github.
-    git clone https://github.com/ZhangBaoshan668/OmicsNCyc-pipeline.git
+    # Downdoald NosZRef pipeline from github.
+    git clone https://github.com/ZhangBaoshan668/NosZRef.git
 
 **Note: `fatal: unable to access` can retry.**
 
-## Introduction to OmicsNCyc pipeline parameters
+## Introduction to NosZRef pipeline parameters
 
     # Parameter explanation
-    cd OmicsNCyc-pipeline
+    cd NosZRef
     
-    python3 nitrogen_rpkm.py -h
-    usage: nitrogen_rpkm.py [-h] [-i CID] [-l LIS] [-g GENE] [-o OUTDIR] [-m GROUP] [-t THREADS] [-d ID] [-q QUERY] [-c CLUSTER] [-e EVALUE] [-v]
-    
+    python3 raw_main.py -h
+    usage: raw_main.py [-h] -i INPUT -l LIS -o OUTDIR -m GROUP [-t THREADS] [-v]
+    nosZ gene analysis pipeline - Simultaneous analysis of nosZI, nosZII, and nosZIII branches
     options:
-    -h, --help            show this help message and exit
-    -i, --cid CID         input directory 
-    -l, --lis LIS         sample list
-    -g, --gene GENE       gene list
-    -o, --outdir OUTDIR   output directory
-    -m, --group GROUP     group list
-    -t, --threads THREADS
-                        number of threads to use for Parallel. Default is 10
-    -d, --id ID           identity threshold for DIAMOND blastx. Default is 75
-    -q, --query QUERY     query coverage threshold for DIAMOND blastx. Default is 75
-    -c, --cluster CLUSTER
-                        cluster threshold for USEARCH cluster_fast. Default is 0.97
-    -e, --evalue EVALUE   E-value threshold for DIAMOND blastx. Default is 1e-5
-    -v, --version         display version and author information and exit
-**Note: The parameters -i, -l, -g, -m and -o are essential for the execution of the main script. The parameters -t, -d, -q, -c and -e are set as default values in the script, and their settings can also be adjusted according to specific needs.**
+      -h, --help            show this help message and exit
+      -i INPUT, --input INPUT
+                        Input directory (containing raw sequencing data)
+      -l LIS, --lis LIS     Sample list file (format: original_filename sample_name)
+      -o OUTDIR, --outdir OUTDIR
+                        Output directory
+      -m GROUP, --group GROUP
+                        Group list file
+      -t THREADS, --threads THREADS
+                        Number of parallel threads (default: 20)
+      -v, --version         Display version and author information
+
+    Examples:
+      python3 raw_main.py -i ./ -l sample.list -o ./ -m group.list
+
+**Note: The parameters -i, -l, -m and -o are essential for the execution of the main script. The parameters -t is set as default values in the script, and their settings can also be adjusted according to specific needs.**
 
 ## Quick Start
 
@@ -145,14 +142,14 @@ Files description:
     cd example
 
     # Enter Conda environment
-    conda activate OmicsNCyc
+    conda activate NosZRef
 
     # Create the "raw_data" folder in the working directory and the folder must be named "raw_data".
     # In the "raw_data" folder, only the single-end sequencing data of high-throughput sequencing should be stored, such as "_1.fastq.gz" or "_1.fq.gz".
     mkdir raw_data
 
     # Create "list.txt", "gene.txt", and "metadata.txt" file
-    touch list.txt gene.txt metadata.txt
+    touch list.txt metadata.txt
   
 - **The `list.txt` file contains two columns of information. The first column represents the original sample number, and the second column represents the renamed sample number. The two columns are separated by a `tab`.**
 
@@ -162,27 +159,21 @@ Files description:
 
 ![Figure 4](https://raw.githubusercontent.com/ZhangBaoshan668/Figure/main/fig4.jpg)
 
-- **The `gene.txt` file contains two columns of information. The first column represents the gene name, and the second column represents the length of the gene reference sequence. The two columns are separated by a `tab`.**
-
-![Figure 5](https://raw.githubusercontent.com/ZhangBaoshan668/Figure/main/fig5.jpg)
-
-**Note: The length information of the reference gene sequence is obtained from the `gene length.txt` file.**
-
-**The `example` folder should contain the `raw_data` folder, `gene.txt`, `list.txt` and `metadata.txt`. Then, by running the main script file `nitrogen_rpkm.py` in the `example` folder, the analysis can be started.**
+**The `example` folder should contain the `raw_data` folder, `list.txt` and `metadata.txt`. Then, by running the main script file `raw_main.py` in the `example` folder, the analysis can be started.**
 
 ![Figure 6](https://raw.githubusercontent.com/ZhangBaoshan668/Figure/main/fig6.jpg)
 
     # Running with default parameters
     
-    python3 /your_path/nitrogen_rpkm.py -i example -l list.txt -g gene.txt -m metadata.txt -o ./
+    python3 /your_path/raw_main.py -i ./ -l list.txt -m metadata.txt -o ./
 
 **Note: The main script must be run from the path of the `example` folder.**
 
 ## FAQ & Contributing
 
-Please report errors and questions on Github [Issues](https://github.com/ZhangBaoshan668/OmicsNCyc-pipeline/issues).
+Please report errors and questions on Github [Issues](https://github.com/ZhangBaoshan668/NosZRef/issues).
 
-Any contribution via [Pull requests](https://github.com/ZhangBaoshan668/OmicsNCyc-pipeline/pulls) will be appreciated.
+Any contribution via [Pull requests](https://github.com/ZhangBaoshan668/NosZRef/pulls) will be appreciated.
 
 
 
