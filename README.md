@@ -19,7 +19,7 @@ Files description:
 
 ## What can we do?
 
-- Comprehensive analysis and visualization of *nosZ* genes;
+- Comprehensive analysis and visualization of *nosZ*-I, *nosZ*-II, and *nosZ*-III, genes;
 - From raw sequencing data to functional gene abundance tables and microbial community profiles;
 - Accurate identification of *nosZ* genes using gene-specific thresholds to minimize false positives;
 
