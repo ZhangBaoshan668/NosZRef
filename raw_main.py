@@ -15,7 +15,7 @@ AUTHOR = "MEG"
 NOSZ_GENES = {
         'nosZI': {
         'similarity': 64,      # Similarity threshold (%)
-        'query_cover': 75,     # Query coverage threshold (%)
+        'query_cover': 50,     # Query coverage threshold (%)
         'evalue': 1e-5,        # E-value threshold
         'database': 'nosZI.dmnd',
         'cluster': 0.86,
@@ -23,15 +23,15 @@ NOSZ_GENES = {
     },
     'nosZII': {
         'similarity': 61,
-        'query_cover': 75,
+        'query_cover': 50,
         'evalue': 1e-5,
         'database': 'nosZII.dmnd',
         'cluster': 0.85,
         'gene_length': 2046
     },
     'nosZIII': {
-        'similarity': 77,
-        'query_cover': 75,
+        'similarity': 52,
+        'query_cover': 50,
         'evalue': 1e-5,
         'database': 'nosZIII.dmnd',
         'cluster': 0.86,
@@ -243,19 +243,35 @@ with open(os.path.join(shell_path, "all.sample.sh"), 'w') as all_sh:
 print("\nExecuting sample processing...")
 os.system(f'python3 {sub_dir}/ParallelShellExecutor.py {shell_path}/all.sample.sh {threads}')
 
-# Subsequent steps remain...
-print("\nExecuting overlapping sequence allocation (EM algorithm)...")
-os.system(f'python3 {sub_dir}/allocate_overlap.py {out_path}')
 
-# Recalculate RPKM
-print("\nRecalculating RPKM...")
-for samp in valid_samples:
-    samp_path = os.path.join(out_path, samp)
-    for nosz_type, nosz_config in NOSZ_GENES.items():
-        gene_length = nosz_config['gene_length']
-        result_file = os.path.join(samp_path, f"{nosz_type}_{samp}.result.txt")
-        if os.path.exists(result_file):
-            os.system(f'python3 {sub_dir}/calculate_rpkm.py {samp_path}/{samp}_total_reads.txt {result_file} {gene_length} {samp_path} {nosz_type}')
+# Generate post-processing script (overlap allocation and RPKM recalculation)
+with open(os.path.join(shell_path, "post_process.sh"), 'w') as post_sh:
+    post_sh.write('#!/bin/bash\n')
+    post_sh.write('set -e\n\n')
+    post_sh.write('echo "=========================================="\n')
+    post_sh.write('echo "Starting post-processing steps"\n')
+    post_sh.write('echo "=========================================="\n\n')
+    
+    # Overlapping sequence allocation
+    post_sh.write('echo "=========================================="\n')
+    post_sh.write('echo "Executing overlapping sequence allocation (EM algorithm)"\n')
+    post_sh.write('echo "=========================================="\n')
+    post_sh.write(f'python3 {sub_dir}/allocate_overlap.py {out_path}\n\n')
+    
+    # Recalculate RPKM
+    post_sh.write('echo "=========================================="\n')
+    post_sh.write('echo "Recalculating RPKM"\n')
+    post_sh.write('echo "=========================================="\n')
+    for samp in valid_samples:
+        for nosz_type, nosz_config in NOSZ_GENES.items():
+            gene_length = nosz_config['gene_length']
+            post_sh.write(f'if [ -f {out_path}/{samp}/{nosz_type}_{samp}.result.txt ]; then\n')
+            post_sh.write(f'    echo "Recalculating RPKM for {samp} - {nosz_type}"\n')
+            post_sh.write(f'    python3 {sub_dir}/calculate_rpkm.py {out_path}/{samp}/{samp}_total_reads.txt {out_path}/{samp}/{nosz_type}_{samp}.result.txt {gene_length} {out_path}/{samp} {nosz_type}\n')
+            post_sh.write(f'fi\n')
+    post_sh.write('\necho "Post-processing completed"\n')
+
+os.system(f'sh {shell_path}/post_process.sh')
 
 # Generate merge script
 with open(os.path.join(shell_path, "merge.sh"), 'w') as sh_merge:
