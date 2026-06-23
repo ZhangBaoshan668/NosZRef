@@ -6,7 +6,7 @@ Version：v1.0.0
 
 Update：2026/06/23
 Version：v1.0.1
-**Added nosZ-III reference sequences**: Expanded the nosZ gene typing database with a comprehensive set of nosZ-III reference sequences
+Added nosZ-III reference sequences: Expanded the nosZ gene typing database with a comprehensive set of nosZ-III reference sequences.
 
 ## Background
 To accurately analyze microbially driven nitrous oxide reduction, current databases and bioinformatics tools face critical limitations. Existing nitrogen-cycle databases, such as NCycDB, lack standardized analytical thresholds, leading to high false-positive rates, and contain ambiguous taxonomic classifications while applying inappropriate uniform clustering cutoffs to functionally diverse genes such as *nosZ*. Furthermore, although metagenomics overcomes the primer bias inherent in amplicon sequencing, available analysis pipelines remain fragmented, with current tools either designed for specific tasks or, like web-based platforms, lacking the flexibility required for large-scale or customized analyses. Therefore, a comprehensive solution is urgently needed, necessitating the development of a rigorously curated database with gene-specific thresholds for similarity and taxonomy, coupled with an integrated, user-friendly open-source pipeline to enable precise, high-throughput profiling of *nosZ*-harboring communities. To address this need, we developed the NosZRef pipeline.
