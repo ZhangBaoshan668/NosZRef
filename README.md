@@ -172,6 +172,10 @@ Files description:
 
 **Note: The main script must be run from the path of the `example` folder.**
 
+## Citation
+
+Baoshan Zhang, Xinrui Wang, Chunyi Kuang, Jiapeng Wu, Yiguo Hong, Development of an integrated workflow (NosZRef) for rapid and accurate nosZ gene profiling and its application to oceanic ecosystems. Marine Environmental Research, 2026 (20): 108247.
+
 ## FAQ & Contributing
 
 Please report errors and questions on Github [Issues](https://github.com/ZhangBaoshan668/NosZRef/issues).
