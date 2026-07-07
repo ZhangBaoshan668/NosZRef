@@ -174,7 +174,7 @@ Files description:
 
 ## Citation
 
-Baoshan Zhang, Xinrui Wang, Chunyi Kuang, Jiapeng Wu, Yiguo Hong, Development of an integrated workflow (NosZRef) for rapid and accurate nosZ gene profiling and its application to oceanic ecosystems. Marine Environmental Research, 2026 (20): 108247.
+Baoshan Zhang, Xinrui Wang, Chunyi Kuang, Jiapeng Wu, Yiguo Hong, Development of an integrated workflow (NosZRef) for rapid and accurate *nosZ* gene profiling and its application to oceanic ecosystems. Marine Environmental Research, 2026 (20): 108247.
 
 ## FAQ & Contributing
 
