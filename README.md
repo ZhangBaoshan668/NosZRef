@@ -182,7 +182,9 @@ Please report errors and questions on Github [Issues](https://github.com/ZhangBa
 
 Any contribution via [Pull requests](https://github.com/ZhangBaoshan668/NosZRef/pulls) will be appreciated.
 
+## 微信问题交流群（WeChat Q&A Group）
 
+![Figure 4](https://raw.githubusercontent.com/ZhangBaoshan668/Figure/main/group.jpg)
 
 
 
