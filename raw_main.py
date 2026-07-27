@@ -35,7 +35,7 @@ NOSZ_GENES = {
         'evalue': 1e-5,
         'database': 'nosZIII.dmnd',
         'cluster': 0.86,
-        'gene_length': 939
+        'gene_length': 1998
     }
 }
 
