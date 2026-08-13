@@ -15,7 +15,7 @@ AUTHOR = "MEG"
 NOSZ_GENES = {
         'nosZI': {
         'similarity': 64,      # Similarity threshold (%)
-        'query_cover': 50,     # Query coverage threshold (%)
+        'query_cover': 75,     # Query coverage threshold (%)
         'evalue': 1e-5,        # E-value threshold
         'database': 'nosZI.dmnd',
         'cluster': 0.86,
@@ -23,19 +23,19 @@ NOSZ_GENES = {
     },
     'nosZII': {
         'similarity': 61,
-        'query_cover': 50,
+        'query_cover': 75,
         'evalue': 1e-5,
         'database': 'nosZII.dmnd',
         'cluster': 0.85,
         'gene_length': 2046
     },
     'nosZIII': {
-        'similarity': 52,
-        'query_cover': 50,
+        'similarity': 77,
+        'query_cover': 75,
         'evalue': 1e-5,
         'database': 'nosZIII.dmnd',
         'cluster': 0.86,
-        'gene_length': 1998
+        'gene_length': 939
     }
 }
 
@@ -174,6 +174,7 @@ for samp, input_file in file_mapping.items():
     print(f"  ✓ Generating script: {samp}.sh (Input file: {os.path.basename(input_file)})")
     
     with open(os.path.join(shell_path, samp+".sh"), 'w') as sh_file:
+        sh_file.write(f'#!/bin/bash\n')  # MODIFIED: Added bash shebang
         sh_file.write(f'echo "=========================================="\n')
         sh_file.write(f'echo "Processing sample: {samp}"\n')
         sh_file.write(f'echo "Input file: {input_file}"\n')
@@ -237,41 +238,25 @@ with open(os.path.join(shell_path, "all.sample.sh"), 'w') as all_sh:
     all_sh.write('#!/bin/bash\n')
     all_sh.write('echo "Starting parallel processing of all samples"\n\n')
     for samp in valid_samples:
-        all_sh.write(f'sh {shell_path}/{samp}.sh\n')
+        all_sh.write(f'bash {shell_path}/{samp}.sh\n')  # MODIFIED: sh → bash
 
 # Execute all sample processing
 print("\nExecuting sample processing...")
 os.system(f'python3 {sub_dir}/ParallelShellExecutor.py {shell_path}/all.sample.sh {threads}')
 
+# Subsequent steps remain...
+print("\nExecuting overlapping sequence allocation (EM algorithm)...")
+os.system(f'python3 {sub_dir}/allocate_overlap.py {out_path}')
 
-# Generate post-processing script (overlap allocation and RPKM recalculation)
-with open(os.path.join(shell_path, "post_process.sh"), 'w') as post_sh:
-    post_sh.write('#!/bin/bash\n')
-    post_sh.write('set -e\n\n')
-    post_sh.write('echo "=========================================="\n')
-    post_sh.write('echo "Starting post-processing steps"\n')
-    post_sh.write('echo "=========================================="\n\n')
-    
-    # Overlapping sequence allocation
-    post_sh.write('echo "=========================================="\n')
-    post_sh.write('echo "Executing overlapping sequence allocation (EM algorithm)"\n')
-    post_sh.write('echo "=========================================="\n')
-    post_sh.write(f'python3 {sub_dir}/allocate_overlap.py {out_path}\n\n')
-    
-    # Recalculate RPKM
-    post_sh.write('echo "=========================================="\n')
-    post_sh.write('echo "Recalculating RPKM"\n')
-    post_sh.write('echo "=========================================="\n')
-    for samp in valid_samples:
-        for nosz_type, nosz_config in NOSZ_GENES.items():
-            gene_length = nosz_config['gene_length']
-            post_sh.write(f'if [ -f {out_path}/{samp}/{nosz_type}_{samp}.result.txt ]; then\n')
-            post_sh.write(f'    echo "Recalculating RPKM for {samp} - {nosz_type}"\n')
-            post_sh.write(f'    python3 {sub_dir}/calculate_rpkm.py {out_path}/{samp}/{samp}_total_reads.txt {out_path}/{samp}/{nosz_type}_{samp}.result.txt {gene_length} {out_path}/{samp} {nosz_type}\n')
-            post_sh.write(f'fi\n')
-    post_sh.write('\necho "Post-processing completed"\n')
-
-os.system(f'sh {shell_path}/post_process.sh')
+# Recalculate RPKM
+print("\nRecalculating RPKM...")
+for samp in valid_samples:
+    samp_path = os.path.join(out_path, samp)
+    for nosz_type, nosz_config in NOSZ_GENES.items():
+        gene_length = nosz_config['gene_length']
+        result_file = os.path.join(samp_path, f"{nosz_type}_{samp}.result.txt")
+        if os.path.exists(result_file):
+            os.system(f'python3 {sub_dir}/calculate_rpkm.py {samp_path}/{samp}_total_reads.txt {result_file} {gene_length} {samp_path} {nosz_type}')
 
 # Generate merge script
 with open(os.path.join(shell_path, "merge.sh"), 'w') as sh_merge:
@@ -283,7 +268,7 @@ with open(os.path.join(shell_path, "merge.sh"), 'w') as sh_merge:
         sh_merge.write(f'python3 {sub_dir}/merge.py {out_path} {nosz_type}\n')
     sh_merge.write('echo "Merge completed"\n')
 
-os.system(f'sh {shell_path}/merge.sh')
+os.system(f'bash {shell_path}/merge.sh')  # MODIFIED: sh → bash
 
 # Generate feature analysis script
 with open(os.path.join(shell_path, "feature.sh"), 'w') as otutab:
@@ -298,7 +283,7 @@ with open(os.path.join(shell_path, "feature.sh"), 'w') as otutab:
         otutab.write(f'{software_dir}/vsearch --usearch_global {out_path}/merge/{nosz_type}/{nosz_type}_merged_target.fa --db {out_path}/merge/{nosz_type}/{nosz_type}_otus.fa --id {cluster} --threads 140 --otutabout {out_path}/merge/{nosz_type}/{nosz_type}_otutab.txt\n\n')
     otutab.write('echo "Feature analysis completed"\n')
 
-os.system(f'sh {shell_path}/feature.sh')
+os.system(f'bash {shell_path}/feature.sh')  # MODIFIED: sh → bash
 
 # Generate diversity analysis script
 with open(os.path.join(shell_path, "diversity.sh"), 'w') as diversity:
@@ -315,7 +300,7 @@ with open(os.path.join(shell_path, "diversity.sh"), 'w') as diversity:
         diversity.write(f'{software_dir}/usearch -otutab_counts2freqs {out_path}/merge/{nosz_type}/alpha/{nosz_type}_otutab_rare.txt -output {out_path}/merge/{nosz_type}/{nosz_type}_otutab_freqs.txt\n\n')
     diversity.write('echo "Diversity analysis completed"\n')
 
-os.system(f'sh {shell_path}/diversity.sh')
+os.system(f'bash {shell_path}/diversity.sh')  # MODIFIED: sh → bash
 
 # Generate plotting script
 with open(os.path.join(shell_path, "plot.sh"), 'w') as plot:
@@ -346,7 +331,7 @@ with open(os.path.join(shell_path, "plot.sh"), 'w') as plot:
     
     plot.write('echo "Plotting analysis completed"\n')
 
-os.system(f'sh {shell_path}/plot.sh')
+os.system(f'bash {shell_path}/plot.sh')  # MODIFIED: sh → bash
 
 # Generate summary report
 with open(os.path.join(out_path, "analysis_summary.txt"), 'w') as report:
