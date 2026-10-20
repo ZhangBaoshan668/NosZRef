@@ -12,7 +12,8 @@
 > 
 > **一键安装：**
 > ```R
-> devtools::install_github("ZhangBaoshan668/nosZviz")
+> install.packages("remotes")
+> remotes::install_github("ZhangBaoshan668/nosZviz")
 > ```
 > 👉 **[点击前往 nosZviz 仓库探索可视化图库](https://github.com/ZhangBaoshan668/nosZviz)**
 
