@@ -1,4 +1,8 @@
 # NosZRef: an integrated database and pipeline for rapid and accurate profiling of *nosZ* genes
+
+> 📊 **可视化拓展插件**：我们开发了专为 NosZRef 结果定制的深度可视化 R 包 **nosZviz**。支持支系分辨、分类学热图、系统发育树等数百种出版级图型。
+> 👉 **访问与安装**：[https://github.com/ZhangBaoshan668/nosZviz](https://github.com/ZhangBaoshan668/nosZviz) （使用 `devtools::install_github("ZhangBaoshan668/nosZviz")` 即可安装）
+
 **Current Version：v1.0.1**
 
 Update：2026/03/28
